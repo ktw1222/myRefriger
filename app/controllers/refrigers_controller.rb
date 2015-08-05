@@ -1,8 +1,14 @@
 class RefrigersController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
 #index
   def index
-    @refrigers = Refriger.all
+    if current_user
+      @refrigers = current_user.refrigers
+    else
+      redirect_to user_session_path
+    end
   end
 
 #new
@@ -12,7 +18,7 @@ class RefrigersController < ApplicationController
 
 #create
   def create
-    @refriger = Refriger.create(refriger_params)
+    @refriger = current_user.refrigers.create(refriger_params)
 
     redirect_to refriger_path(@refriger)
   end
@@ -45,6 +51,10 @@ class RefrigersController < ApplicationController
   end
 
 private
+    def set_post
+      @refriger = Refriger.find(params[:id])
+    end
+
     def refriger_params
       params.require(:refriger).permit(:person, :location)
     end
