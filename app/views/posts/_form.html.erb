@@ -1,0 +1,15 @@
+<%= form_for @post do |f| %>
+  <%= f.label :food %>
+  <%= f.text_field :title %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url %>
+
+  <%= f.label :instruction %>
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+<% end %>

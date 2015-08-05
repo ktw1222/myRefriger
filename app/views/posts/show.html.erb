@@ -1,0 +1,16 @@
+<h2><%= @post.title %> <%= link_to "(edit)", edit_post_path(@post) %></h2>
+
+<h3>By: <%= @post.author %></h3>
+<img class="food-photo" src="<%= @post.photo_url %>">
+
+<h3>Instruction</h3>
+<%= @post.content %>
+
+<h3>Comments <%= link_to "(+)", new_post_comment_path(@post) %></h3>
+
+  <% @post.comments.each do |comment| %>
+
+        <p><strong>Name: </strong> <%= comment.name %></p>
+        <p><strong>Text: </strong> <%= comment.text %></p>
+
+  <% end %>

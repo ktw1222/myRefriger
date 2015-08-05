@@ -1,0 +1,9 @@
+<h2>Recipes <%= link_to "(new)", new_post_path %></h2>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post %>
+    </li>
+  <% end %>
+</ul>

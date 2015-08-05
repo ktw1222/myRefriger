@@ -1,0 +1,11 @@
+<h2>Comments <%= link_to "(+)", new_post_comment_path %></h2>
+
+<p> Comments: </p>
+
+  <% @comments.each do |comment| %>
+    <table>
+      <tr>
+        <td><p>Name: <%= comment.name %></p></td>
+        <td><p>Text: <%= comment.text %></p></td>
+
+  <% end %>

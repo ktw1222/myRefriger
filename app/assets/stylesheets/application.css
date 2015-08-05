@@ -36,7 +36,11 @@
 
  }
 
-table, th, td {
+
+.food-photo {
+  width: 400px;
+}
+/*table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -47,4 +51,4 @@ th, td {
 
 th {
   text-align: left;
-}
+}*/
