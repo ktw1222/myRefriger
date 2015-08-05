@@ -1,0 +1,17 @@
+<h2><%= @refriger.location %> <%= link_to "(edit)", edit_refriger_path(@refriger) %></h2>
+
+
+
+<h3>Foods <%= link_to "(+)", new_refriger_food_path(@refriger) %></h3>
+
+  <% @refriger.foods.each do |food| %>
+
+        <p><strong>Name: </strong> <%= food.name %></p>
+        <p><strong>Amount: </strong> <%= food.amount %></p>
+        <p><strong>Buy: </strong> <%= food.first_date %></p>
+        <p><strong>Expiration Date: </strong> <%= food.expiration_date %></p>
+        <p><strong>Status: </strong> <%= food.status %></p>
+
+
+
+  <% end %>

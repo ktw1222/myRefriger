@@ -1,0 +1,9 @@
+<h1> Refrigerator <%= link_to "(add new refri)", new_refriger_path %></h1>
+
+<ul>
+  <% @refrigers.each do |refriger| %>
+    <li>
+      <%= link_to refriger.location, refriger %>
+    </li>
+  <% end %>
+</ul>
