@@ -1,17 +1,57 @@
 <h2><%= @refriger.location %> <%= link_to "(edit)", edit_refriger_path(@refriger) %></h2>
 
-
-
 <h3>Foods <%= link_to "(+)", new_refriger_food_path(@refriger) %></h3>
 
-  <% @refriger.foods.each do |food| %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Buy</th>
+      <th>Expiration Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <% @refriger.foods.each do |food| %>
+    <tr>
+
+      <td><strong></strong> <%= food.name %></td>
+      <td><strong></strong> <%= food.amount %></td>
+      <td><strong></strong> <%= food.first_date %></td>
+      <td><strong></strong> <%= food.expiration_date %></td>
+      <td><strong></strong> <%= food.status %></td>
+      <td>
+        <%= link_to 'Edit', edit_refriger_food_path(@refriger, food) %>
+      </td>
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <% @refriger.foods.each do |food| %>
+        <p><%= link_to "edit this food", edit_refriger_food_path(@refriger, food) %></p>
         <p><strong>Name: </strong> <%= food.name %></p>
         <p><strong>Amount: </strong> <%= food.amount %></p>
         <p><strong>Buy: </strong> <%= food.first_date %></p>
         <p><strong>Expiration Date: </strong> <%= food.expiration_date %></p>
         <p><strong>Status: </strong> <%= food.status %></p>
 
-
-
-  <% end %>
+  <% end %> -->

@@ -8,9 +8,32 @@
 
 <h3>Comments <%= link_to "(+)", new_post_comment_path(@post) %></h3>
 
-  <% @post.comments.each do |comment| %>
+  <!-- <% @post.comments.each do |comment| %>
 
         <p><strong>Name: </strong> <%= comment.name %></p>
         <p><strong>Text: </strong> <%= comment.text %></p>
 
-  <% end %>
+  <% end %> -->
+
+
+  <table class="table">
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Text</th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <% @post.comments.each do |comment| %>
+       <tr>
+         <td><strong></strong> <%= comment.name %></td>
+         <td><strong></strong> <%= comment.text %></td>
+         <td>
+          <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
+         </td>
+       </tr>
+
+       <% end %>
+      </tbody>
+    </table>

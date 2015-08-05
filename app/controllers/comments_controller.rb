@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.update(comment_params.merge(post: @post))
 
-    redirect_to post_comments_path(@post, @comment)
+    redirect_to post_path(@post, @comment)
 
   end
 

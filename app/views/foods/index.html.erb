@@ -1,13 +1,30 @@
 <h2>Foods <%= link_to "(+)", new_refriger_food_path %></h2>
 
-<p> Foods: </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Buy</th>
+      <th>Expiration Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
 
-  <% @foods.each do |food| %>
+  <tbody>
+    <% @refriger.foods.each do |food| %>
+    <tr>
 
-    <p><strong>Name: </strong> <%= food.name %></p>
-    <p><strong>Amount: </strong> <%= food.amount %></p>
-    <p><strong>Buy: </strong> <%= food.first_date %></p>
-    <p><strong>Expiration Date: </strong> <%= food.expiration_date %></p>
-    <p><strong>Status: </strong> <%= food.status %></p>
+      <td><strong></strong> <%= food.name %></td>
+      <td><strong></strong> <%= food.amount %></td>
+      <td><strong></strong> <%= food.first_date %></td>
+      <td><strong></strong> <%= food.expiration_date %></td>
+      <td><strong></strong> <%= food.status %></td>
+      <td>
+        <%= link_to 'Edit', edit_refriger_food_path(@refriger, food) %>
+      </td>
+    </tr>
 
-  <% end %>
+    <% end %>
+  </tbody>
+</table>

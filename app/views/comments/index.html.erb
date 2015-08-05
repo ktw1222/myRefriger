@@ -1,11 +1,23 @@
 <h2>Comments <%= link_to "(+)", new_post_comment_path %></h2>
 
-<p> Comments: </p>
-
-  <% @comments.each do |comment| %>
-    <table>
+<table class="table">
+  <thead>
       <tr>
-        <td><p>Name: <%= comment.name %></p></td>
-        <td><p>Text: <%= comment.text %></p></td>
+        <th>Name</th>
+        <th>Text</th>
+      </tr>
+  </thead>
 
-  <% end %>
+  <tbody>
+    <% @post.comments.each do |comment| %>
+     <tr>
+       <td><strong></strong> <%= comment.name %></td>
+       <td><strong></strong> <%= comment.text %></td>
+       <td>
+        <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
+       </td>
+     </tr>
+
+     <% end %>
+    </tbody>
+  </table>

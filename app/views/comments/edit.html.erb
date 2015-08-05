@@ -2,6 +2,6 @@
 
 <%= render partial: "form" %>
 
-<%= form_for @comment, method: :delete do |f| %>
+<%= form_for [@post, @comment], method: :delete do |f| %>
   <%= f.submit "Delete!", class: "delete" %>
 <% end %>
