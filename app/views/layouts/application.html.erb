@@ -9,12 +9,12 @@
 
   <body>
       <div id="title"><h1> My Refriger </h1></div>
-
-    <nav class=navi>
-      <li><div id="post_nav"><%= link_to "Home", root_path %></div></li>
-      <li><div id="post_nav"><%= link_to "My Refrigerator", refrigers_path %></div></li>
-      <li><div id="post_nav"><%= link_to "Recipe", posts_path %></div></li>
-    </nav>
+      
+    <ul id="nav">
+      <li><div id="post-nav"><%= link_to "Home", root_path %></div></li>
+      <li><div id="post-nav"><%= link_to "My Refrigerator", refrigers_path %></div></li>
+      <li><div id="post-nav"><%= link_to "Recipe", posts_path %></div></li>
+    </ul>
 
     <%= yield %>
 
