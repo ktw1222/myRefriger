@@ -10,27 +10,34 @@
   </head>
 
   <body>
-      <div id="title"><h1> My Refriger </h1></div>
+   <div id="container">
+      <div id="header">
+        <div id="title"><h1> My Refriger </h1></div>
 
-    <div class=nav>
-      <ul>
-        <li class="home"><a><%= link_to "Home", root_path %></a></li>
-        <li class="myrefri"><a><%= link_to "My Refrigerator", refrigers_path %></a></li>
-        <li class="recipe"><a><%= link_to "Recipe", posts_path %></a></li>
-      </ul>
+        <div class=nav>
+          <ul>
+            <li class="home"><a><%= link_to "Home", root_path %></a></li>
+            <li class="myrefri"><a><%= link_to "My Refrigerator", refrigers_path %></a></li>
+            <li class="recipe"><a><%= link_to "Recipe", posts_path %></a></li>
+          </ul>
+        </div>
+
+        <div id="signin">
+          <% if current_user %>
+            <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+          <% else %>
+            <h3><%= link_to 'Signup', new_user_registration_path %></h3>
+            <h3><%= link_to 'Login', new_user_session_path %></h3>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="main">
+          <%= yield %>
+      </div>
+
+      
     </div>
-
-    <% if current_user %>
-      <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-    <% else %>
-      <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-      <h3><%= link_to 'Login', new_user_session_path %></h3>
-    <% end %>
-
-    <%= yield %>
-
   </body>
-  <footer>
-
 
 </html>
