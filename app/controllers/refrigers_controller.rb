@@ -19,7 +19,7 @@ class RefrigersController < ApplicationController
 #create
   def create
     @refriger = current_user.refrigers.create(refriger_params)
-
+    
     redirect_to refriger_path(@refriger)
   end
 

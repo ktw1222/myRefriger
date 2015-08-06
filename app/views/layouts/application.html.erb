@@ -5,16 +5,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
   </head>
 
   <body>
       <div id="title"><h1> My Refriger </h1></div>
 
-    <nav class=navi>
-      <li><div id="post_nav"><%= link_to "Home", root_path %></div></li>
-      <li><div id="post_nav"><%= link_to "My Refrigerator", refrigers_path %></div></li>
-      <li><div id="post_nav"><%= link_to "Recipe", posts_path %></div></li>
-    </nav>
+    <div class=nav>
+      <ul>
+        <li class="home"><a><%= link_to "Home", root_path %></a></li>
+        <li class="myrefri"><a><%= link_to "My Refrigerator", refrigers_path %></a></li>
+        <li class="recipe"><a><%= link_to "Recipe", posts_path %></a></li>
+      </ul>
+    </div>
 
     <% if current_user %>
       <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
@@ -26,5 +30,7 @@
     <%= yield %>
 
   </body>
+  <footer>
+
 
 </html>
