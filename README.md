@@ -8,9 +8,6 @@ After we shop foods at a grocery store and put them in the refrigerator, we some
 ![refriger](planning/images/myRefriger2.png)
 ![recipe](planning/images/myRefriger3.png)
 
-## Approach taken
-After we shop foods at a grocery store and put them in the refrigerator, we sometimes forget what we have in there later. Some foods stay in the refrigerator for a long time, and we buy same foods again without eating previous ones. So, this app allows users to write the first date putting the foods in the refrigerator and the expiration date of foods so we can track what we have and the freshness of foods.
-
 ## User Stories
 As a user,
 - sign in to use features of the website as an user and sign out to end all sessions
